@@ -13,5 +13,5 @@ resources:
     zone: europe-west1-b
     secretsBucket: raghu-decis-etl-01-dev-server-secrets    
     startupBucket: raghu_etl_dev_bucket/startup
-    repo: airflowvm
+    repo: airflowvm_2
     branch: raghu_git_hub_branch
