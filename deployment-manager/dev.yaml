@@ -1,0 +1,18 @@
+imports:
+- path: vm-template.py
+- path: firewall-template.py
+- path: compute-engine-template.py
+
+resources:
+- name: compute-engine-setup
+  type: compute-engine-template.py
+  properties:
+    projectId: helpful-compass-282814
+    etlApiVm: etl-api-vm
+    machineType: n1-standard-2
+    zone: europe-west1-b
+    secretsBucket: raghu-decis-etl-01-dev-server-secrets
+    # startupBucket: skyuk-uk-poc-decis-etl-01-is-dev/cmy23-dashboardupdate-etl/startup
+    startupBucket: raghu_etl_dev_bucket/startup
+    repo: airflowvm
+    branch: raghu_git_hub_branch

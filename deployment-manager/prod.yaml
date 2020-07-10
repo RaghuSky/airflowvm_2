@@ -1,0 +1,19 @@
+imports:
+- path: vm-template.py
+- path: firewall-template.py
+- path: compute-engine-template.py
+
+resources:
+- name: compute-engine-setup
+  type: compute-engine-template.py
+  properties:
+    projectId: skyuk-uk-decis-etl-01-prod
+    etlApiVm: etl-api-vm
+    machineType: n1-standard-32
+    zone: europe-west1-b
+    secretsBucket: skyuk-uk-decis-etl-01-prod-server-secrets
+    # startupBucket: cmy23_decmarts_bucket_prod_region/startup
+    startupBucket: cmy23_qcustexp_bucket_prod_region/dta-customer-journeys/startup
+    repo: decisioning-gcp-marts
+    branch: cmy23-etl
+    tag: cmy23-etl-tag2
