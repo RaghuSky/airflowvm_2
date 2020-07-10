@@ -11,8 +11,7 @@ resources:
     etlApiVm: etl-api-vm
     machineType: n1-standard-2
     zone: europe-west1-b
-    secretsBucket: raghu-decis-etl-01-dev-server-secrets
-    # startupBucket: skyuk-uk-poc-decis-etl-01-is-dev/cmy23-dashboardupdate-etl/startup
+    secretsBucket: raghu-decis-etl-01-dev-server-secrets    
     startupBucket: raghu_etl_dev_bucket/startup
     repo: airflowvm
     branch: raghu_git_hub_branch
