@@ -37,7 +37,8 @@ export SECRETS_BUCKET=`getInstanceMetadata attributes/secrets-bucket`
 export STARTUP_BUCKET=`getInstanceMetadata attributes/startup-bucket`
 
 # Git credentials
-export GIT_USERNAME=$(gsutil cat gs://${SECRETS_BUCKET}/git.txt)
+#export GIT_USERNAME=$(gsutil cat gs://${SECRETS_BUCKET}/git.txt)
+export GIT_USERNAME=`RaghuSky`
 export GIT_TOKEN=""
 
 if [[ ${GIT_USERNAME} == "" ]]; then
