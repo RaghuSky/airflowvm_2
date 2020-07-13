@@ -1,3 +1,38 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@RaghuSky 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+sky-uk
+/
+decisioning-gcp-marts
+Private
+0
+0
+0
+Code
+Issues
+Pull requests
+Projects
+Wiki
+Security
+Insights
+decisioning-gcp-marts/gcs/startup/python3.sh
+@cmacartney
+cmacartney correction to git account reference
+Latest commit b33bbfa 25 days ago
+ History
+ 1 contributor
+248 lines (188 sloc)  7.33 KB
+  
 #!/bin/bash
 # On a GCP Debian VM, startup-script-url logs are written to: /var/log/daemon.log
 
@@ -37,8 +72,7 @@ export SECRETS_BUCKET=`getInstanceMetadata attributes/secrets-bucket`
 export STARTUP_BUCKET=`getInstanceMetadata attributes/startup-bucket`
 
 # Git credentials
-#export GIT_USERNAME=$(gsutil cat gs://${SECRETS_BUCKET}/git.txt)
-export GIT_USERNAME=`RaghuSky`
+export GIT_USERNAME=$(gsutil cat gs://${SECRETS_BUCKET}/git.txt)
 export GIT_TOKEN=""
 
 if [[ ${GIT_USERNAME} == "" ]]; then
@@ -140,8 +174,7 @@ GIT_BRANCH=`getInstanceMetadata attributes/branch` || true
 if [ ! -d "${CODE_HOME}" ]; then
 
     printf "\nCloning the ${GIT_REPO} repo\n"
-    #git clone https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/sky-uk/${GIT_REPO}.git ${CODE_HOME}
-    git clone https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/${GIT_REPO}.git ${CODE_HOME}
+    git clone https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/sky-uk/${GIT_REPO}.git ${CODE_HOME}
     #git clone https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/cmacartney/${GIT_REPO}.git ${CODE_HOME} #CMedit
 
 fi
@@ -248,3 +281,15 @@ END_TIME=`date +%s`
 RUN_TIME=$((END_TIME-START_TIME))
 
 printf "\nEnvironment setup in ${RUN_TIME} seconds\n"
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
