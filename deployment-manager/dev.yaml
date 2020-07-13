@@ -1,4 +1,4 @@
-gitimports:
+imports:
 - path: vm-template.py
 - path: firewall-template.py
 - path: compute-engine-template.py
